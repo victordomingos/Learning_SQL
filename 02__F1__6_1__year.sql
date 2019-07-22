@@ -1,3 +1,3 @@
-SELECT data_hora 
+SELECT DATE(data_hora)
 FROM intervencao
 WHERE YEAR(data_hora)='2015';
