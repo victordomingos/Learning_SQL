@@ -1,4 +1,4 @@
--- 
+-- Qual a media de gastos em consultas, para cada utente? 
 
 SELECT U.nome,
        AVG(E.especialidade_preco) AS despesa_media
