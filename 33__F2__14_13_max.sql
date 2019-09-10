@@ -6,6 +6,7 @@ FROM medico M
     INNER JOIN consulta_medica CM
         on M.numero_ordem = CM.medico
 
+WHERE CM.realizada = 1
 GROUP BY CM.medico
 HAVING total_consultas = (
     SELECT COUNT(*) as total_consultas
@@ -14,6 +15,7 @@ HAVING total_consultas = (
         INNER JOIN consulta_medica CM
             on M.numero_ordem = CM.medico
 
+    WHERE CM.realizada = 1
     GROUP BY CM.medico
     ORDER BY total_consultas DESC
     LIMIT 1
